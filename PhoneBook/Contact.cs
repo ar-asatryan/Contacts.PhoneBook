@@ -10,7 +10,7 @@ namespace PhoneBook
     {
         public string Name { get; set; }
         public string SurName { get; set; }
-        public int PhoneNum { get; set; }
+        public string PhoneNum { get; set; }
 
         public Contact()
         {

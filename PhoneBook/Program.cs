@@ -11,13 +11,14 @@ namespace PhoneBook
         static void Main(string[] args)
         {
             var db = new DataBase();
-            var listContacts = db.GetContact(40);
+            var listContacts = db.GetContact(15);
 
             foreach (var contact in listContacts)
             {
                 Console.WriteLine($"Contact{listContacts.IndexOf(contact) + 1}: {contact.Name} {contact.SurName} { contact.PhoneNum}");
             }
 
+            Console.ReadLine();
         }
     }
 }
