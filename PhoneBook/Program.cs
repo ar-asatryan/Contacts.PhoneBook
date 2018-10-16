@@ -10,15 +10,39 @@ namespace PhoneBook
     {
         static void Main(string[] args)
         {
-            var db = new DataBase();
-            var listContacts = db.GetContact(15);
+            Console.WriteLine("Print All Contacts in PhoneBook:");
+            PrintAllContacts(30);
 
-            foreach (var contact in listContacts)
-            {
-                Console.WriteLine($"Contact{listContacts.IndexOf(contact) + 1}: {contact.Name} {contact.SurName} { contact.PhoneNum}");
-            }
+            Console.WriteLine("Print Needed Contacts:");
+            PrintConcreteContacts("093",30);
+            
+
+
+
 
             Console.ReadLine();
         }
+
+        static void PrintAllContacts(int count)
+        {
+            var contacts = new PhoneBook();
+            var listContacts = contacts.GetContacts(count);
+            foreach (var contact in listContacts)
+            {
+                Console.WriteLine($"{contact.Name} {contact.SurName} { contact.PhoneNum}");
+            }
+        }
+
+        static void PrintConcreteContacts(string str, int count)
+        {
+            var contacts = new PhoneBook();
+            var listContacts = contacts.GetConcreteOperatorContacts(str, count);
+            foreach (var contact in listContacts)
+            {
+                Console.WriteLine($"{contact.Name} {contact.SurName} { contact.PhoneNum}");
+            }
+        }
+
+
     }
 }

@@ -12,10 +12,5 @@ namespace PhoneBook
         public string SurName { get; set; }
         public string PhoneNum { get; set; }
 
-        public Contact()
-        {
-
-        }
-
     }
 }
